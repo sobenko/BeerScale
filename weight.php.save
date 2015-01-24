@@ -1,0 +1,29 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
+ini_set('display_startup_errors', TRUE);
+
+exec("/bin/stty -F /dev/ttyACM0 9600 sane raw cs8 hupcl cread clocal -echo -onlcr ");
+$fp=fopen("/dev/ttyACM0","c+");
+if(!$fp) die("Can't open device");
+stream_set_blocking($fp,1);
+fwrite($fp,"anything\n");
+stream_set_blocking($fp,0);
+$lb = 0;
+$strIn = null;
+while(!($strIn = fgets($fp)))
+{
+$lb++;
+if($lb == 100) {
+break;
+}
+}
+echo $strIn;
+
+fclose($fp);
+
+$page = $_SERVER['PHP_SELF'];
+$sec = "";
+header("Refresh: $sec; url=$page");
+
+?>
