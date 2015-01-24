@@ -16,5 +16,5 @@ while 1 :
 	if not line.strip():
 		continue
 	f = open('keg1.txt','w')
-	f.write(maprange(line))
+	f.write(maprange(float(line))
 	f.close()
