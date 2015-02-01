@@ -20,3 +20,4 @@ while 1 :
 	f = open('keg1.txt','w')
 	f.write(str(maprange(float(line))))
 	f.close()
+
