@@ -1,0 +1,148 @@
+a { color: rgba(247,175,0,1); text-decoration: none; }
+a:visited { color: rgba(247,175,0,1); }
+a:hover { color: rgba(226,87,18,1); }
+a:focus { outline: none; }
+#on-beers { opacity: .4; }
+#home-header { width: 1020px; height: 159px; background-position: center top; background-repeat: repeat-x; background-image: url('../img/full_yellow_header.png'); margin: 0 auto; padding: 0 0 15px 0;  }
+#header-full-bg { width: 100%; background-image: url('../img/full_yellow_header.png'); background-position: center top; background-repeat: repeat-x; background-color: #fff; }
+#related-box { display: block; width: 580px; margin: 0 0 15px 0;  }
+#profile-box { display: table; width: 534px;  margin: 0 0 60px 0; }
+#profile-page { margin-top: 21px; }
+#blog-under-header-beers { width: 540px; height: 70px; display: block; margin: 2px 0 0 0; padding: 20px; background-color: rgba(247,247,247,1); border-bottom: 2px solid rgba(225,225,225,1); overflow: hidden; transition-property: height;
+transition-duration: 2s;
+-moz-transition-property: height; /* Firefox 4 */
+-moz-transition-duration: 2s; /* Firefox 4 */
+-webkit-transition-property: height; /* Safari and Chrome */
+-webkit-transition-duration: 2s; /* Safari and Chrome */
+-o-transition-property: height; /* Opera */
+-o-transition-duration: 2s; /* Opera */ }
+#blog-under-header-beers:hover {height: 550px; }
+.short-des { margin: 7px 0 0 0; font-size: 9px; text-align: center; border: 0px solid rgba(248,185,32,1); }
+.dot-color { border-right: 1px dotted rgba(248,185,32,1); }
+.short-colors { color: rgba(248,185,32,1); }
+.borderizer { float: left; border: 1px solid rgba(248,185,32,1); font-size: 9px; width: 41px; text-align: center; }
+.borderizer-season { float: left; border: 1px solid rgba(248,185,32,1); font-size: 10px; width: 127px; text-align: center; background-color: rgba(247,247,247,1); margin: 2px 0 0 0; }
+.badge-box { display: block; width: 131px; margin: 0 14px 6px 0; float: left; height: 270px; }
+.descript-box { display: table-row; width: 275px; float: right; padding: 0 15px 0 0; margin: 0 0 11px 0; }
+.descript-cell { display: table-cell; vertical-align: top; }
+.beer-img-box { display: table-cell; width: 230px; padding: 20px 0 0 30px; vertical-align: top; }
+.beer-image-center { margin: 0 0 60px 40px;}
+.beer-name { margin: 20px 0 11px 0; font-family: proxima-nova-extra-condensed-1,proxima-nova-extra-condensed-2; font-size: 34px; font-weight: 900; }
+.beer-tagline { margin: 0 0 4px 0; font-family: proxima-nova-extra-condensed-1,proxima-nova-extra-condensed-2; font-size: 20px; font-weight: normal; line-height: 20px; }
+.beer-more { margin: 0 0 15px 0; font-family: "Verdana"; font-size: 12px; font-weight: normal; line-height: 18px; }
+.info-box { display: block; margin: 0 2px 0 0; background-color: rgba(247,247,247,1); width: 90px; height: 61px; padding: 10px 0 0 0; border-top: 2px solid rgba(225,225,225,1); float: left; text-align: center; }
+.info-box-last { display: block; margin: 0 0 0 0; background-color: rgba(247,247,247,1); width: 90px; height: 61px; padding: 10px 0 0 0; border-top: 2px solid rgba(225,225,225,1); float: left; text-align: center; }
+.stat-heading { font-weight: 700; font-size: 18px; margin: 0 0 0 0; font-family: proxima-nova-extra-condensed-1,proxima-nova-extra-condensed-2; color: rgba(247,175,0,1); }
+.stat { font-weight: 900; font-size: 30px; line-height: 32px; font-family: proxima-nova-extra-condensed-1,proxima-nova-extra-condensed-2; margin: 0 0 0 0; }
+.badge-container { display: block; width: 580px; float: left; margin: 0 0 22px 0; padding: 0 0 0px 0; }
+.separator { margin: 0; }
+.beer-share-box { display: table-row; font-size: 12px; font-weight: bold;  width: 275px; border-top: 1px solid rgba(225,225,225,1); color: rgba(247,175,0,1); float: left; }
+.beer-vid-share-box { display: table-row; font-size: 12px; font-weight: bold;  width: 275px; border-top: 1px solid rgba(225,225,225,1); color: rgba(247,175,0,1); padding: 9px 0 0 0; float: left; }
+.beer-thumb{border: 3px solid #e1e1e1; border-radius: 3px 3px 3px 3px;}
+.share-this-beer { margin: 5px 0 0 0; float: left; }
+.beer-pin { margin: 4px 0 0 0; }
+.beer-facebook { margin: 4px 5px 0 0; float: left; }
+.beer-twitter { margin: 4px 5px 0 0; float: left; }
+.watch-video { margin: 4px 0 4px 0; float: left; }
+.play-button { float: right; margin: 4px 6px 4px 0; }
+.untappd-box { display: table-row; border-top: 1px solid #000; width: 275px; border-top: 1px solid rgba(225,225,225,1); padding: 5px 0; float: left; }
+.untappd-icon { position: relative; float: left; margin: 5px 5px 0px 0; }
+.untappd-icon a span { display: none; color: rgba(89,45,0,1); }
+.untappd-icon a:hover span { display: block; position: absolute; width: 200px; left: 10px; top: 50px; padding: 5px; z-index: 999; background-image: url('../img/tweet_bg.png'); padding: 27px 15px 15px 15px; opacity: 1; }
+.untappd-whos-drinking{display: table-row; color: #592D00; font-size: 10px; padding: 8px 0 0 0;float: left; }
+
+.beer-menu-profile{display: table; border-top: 1px solid #e1e1e1; margin: 15px 0 0 0; padding: 15px 0 0 0;}
+.beer-menu-photo-cell{display: table-cell; width: 151px; padding: 0 15px 0 0;} 
+.beer-menu-text-cell{display: table-cell; width: 400px; vertical-align: top;}
+.beer-menu-thumb{border: 3px solid #e1e1e1; border-radius: 3px 3px 3px 3px;}
+.beer-menu-profile h1{margin: 3px 0 0 0; font-family: proxima-nova-extra-condensed-1,proxima-nova-extra-condensed-2; font-weight: 400; font-size: 24px; }
+.beer-menu-profile p{margin: 15px 0 0 0; }
+
+#slideshow { }
+#nav { margin: 0; padding: 0; }
+#nav ul { padding: 0; margin: 0; }
+#nav li { width: 40px; list-style: none; padding: 5px 0 5px 0; }
+#nav a { width: 40px; display: block; }
+#nav a:hover { opacity: .7;}
+#nav li.activeSlide a { border-left: 1px solid orange; }
+#nav a:focus { outline: none; }
+#nav img { border: none; display: block }
+
+#blog-under-header-beers a{ color: #e25712 ; }
+#blog-under-header-beers a:visited{ color: #e25712; }
+#blog-under-header-beers a:hover{ color: #f7af00; }
+
+.draft-only{
+	display: table;
+	border-top: 4px solid #f7af00;
+	width: 566px;
+}
+
+.draft-only-name{
+	display: table-cell;
+	font-weight: bold;
+	background-color: #f7f7f7;
+	padding: 5px;
+	border-left: 2px solid #e1e1e1;
+	font-family: proxima-nova-extra-condensed-1,proxima-nova-extra-condensed-2;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.draft-only-ibu-srm-abv{
+	display: table-cell;
+	font-weight: bold;
+	color: #333;
+	width: 85px;
+	border-right: 1px solid #f7af00;
+	text-align: center;
+	padding: 3px;
+	background-color: #fff;
+	font-size: 16px;
+	font-family: proxima-nova-extra-condensed-1,proxima-nova-extra-condensed-2;
+}
+
+
+.draft-only-ibu-srm-abv:last-child{
+		border-right: 2px solid #e1e1e1;
+}
+
+.limited-draft-img {display: inline-block; width: 276px; }
+.limited-draft-descr {display: inline-block; width: 266px; padding: 5px; vertical-align: top;}
+
+
+.draft-only-desc {
+	display: block;
+	width: 552px;
+	border: 2px solid #e1e1e1;
+	padding: 5px;
+	margin: 0 0 15px 0;
+}
+
+.rotational-cell {
+	width: 140px;
+	height: 77px;
+	padding-top: 24px;
+	background-color: #f7f7f7;
+	border-bottom: 2px solid #e0e0e0;
+	display: inline-block;
+	margin: 1px 1px 0 0;
+	vertical-align: top;
+	text-align: center;
+}
+
+/*.rotational-cell:hover {
+	background-color: #e1e1e1;
+}*/
+.featured-rotational {
+	width: 140px;
+	margin-top: -24px;
+	padding: 3px 0 3px 0;
+	text-align: center;
+	background-color: #f7af00;
+	color: #fff;
+	font-weight: bold;
+	letter-spacing: 3px;
+	font-size: 1.1em;
+}

@@ -1,40 +1,44 @@
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="main.css">
  <script type="text/javascript">
 
-        function Ajax()
-        {
-            var
-                $http,
-                $self = arguments.callee;
+    function Ajax()
+    {
+        var
+        $http,
+        $self = arguments.callee;
 
-            if (window.XMLHttpRequest) {
-                $http = new XMLHttpRequest();
-            } else if (window.ActiveXObject) {
-                try {
-                    $http = new ActiveXObject('Msxml2.XMLHTTP');
-                } catch(e) {
-                    $http = new ActiveXObject('Microsoft.XMLHTTP');
-                }
+        if (window.XMLHttpRequest) {
+            $http = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+            try {
+                $http = new ActiveXObject('Msxml2.XMLHTTP');
+            } catch(e) {
+                $http = new ActiveXObject('Microsoft.XMLHTTP');
             }
-
-            if ($http) {
-                $http.onreadystatechange = function()
-                {
-                    if (/4|^complete$/.test($http.readyState)) {
-                        document.getElementById('ReloadThis').innerHTML = $http.responseText;
-                        setTimeout(function(){$self();}, 1000);
-                    }
-                };
-                $http.open('GET', 'loadkeg1.php' + '?' + new Date().getTime(), true);
-                $http.send(null);
-            }
-
         }
 
-    </script></head>
-<body><h1>Beer</h1><script type="text/javascript">
-        setTimeout(function() {Ajax();}, 1000);
-    </script>
-    <div id="ReloadThis">Weight</div>
+        if ($http) {
+            $http.onreadystatechange = function()
+            {
+                if (/4|^complete$/.test($http.readyState)) {
+                    document.getElementById('ReloadThis').innerHTML = $http.responseText;
+                    setTimeout(function(){$self();}, 1000);
+                }
+            };
+            $http.open('GET', 'loadkeg1.php' + '?' + new Date().getTime(), true);
+            $http.send(null);
+        }
+
+    }
+
+</script></head>
+<body><script type="text/javascript">
+    setTimeout(function() {Ajax();}, 1000);
+</script>
+<div class="descript-box">
+    <h1 class="beer-name">Sixpont Bengali Tiger IPA</h1>
+    <div class="beer-tagline">...While we could suggest what food this beer pairs well with,</div>
+    <div class="beer-more">or which glass to serve it in, the most important thing to remember is: <i>even though we may take beer very seriously, we don't take ourselves too seriously.</i> It's Mad Science.</div><div class="info-box"><div class="stat-heading">ABV</div><span class="stat">6.5%</span></div><div class="info-box"><div class="stat-heading">IBU</div><span class="stat">69</span></div><div class="info-box-last"><div class="stat-heading">OZ Left</div><span class="stat"><div id="ReloadThis">0</div></span></div></div>
 </body></html>
