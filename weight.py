@@ -18,5 +18,5 @@ while 1 :
 		continue
 	print line
 	f = open('keg1.txt','w')
-	f.write(str(maprange(float(line)))
+	f.write(str(maprange(float(line))))
 	f.close()
