@@ -22,6 +22,6 @@
     $file = "keg1.txt";
     $f = fopen($file, "r");
     while ( $line = fgets($f, 1000) ) {
-    	echo round(round(lbsToOz($line)) /16);
+    	echo round(lbsToOz($line));
     }
 ?>
