@@ -23,7 +23,7 @@
             $http.onreadystatechange = function()
             {
                 if (/4|^complete$/.test($http.readyState)) {
-                    document.getElementById('ReloadThis').innerHTML = $http.responseText;
+                    document.getElementById('Tap3Amount').innerHTML = $http.responseText;
                     setTimeout(function(){$self();}, 1000);
                 }
             };
@@ -52,13 +52,13 @@
    <div class="info-box-last">
       <div class="stat-heading">Oz Left</div>
       <span class="stat">
-         <div id="ReloadThis">0</div>
+         <div id="Tap2Amount">0</div>
       </span>
    </div>
 </div>
 <div class="descript-box">
-   <h1 class="beer-name">Beer 1</h1>
-   <div class="beer-tagline">.Tagline</div>
+   <h1 class="beer-name">Dan Good Celebration Ale Clone</h1>
+   <div class="beer-tagline">A Dan Good Clone</div>
    <div class="beer-more">Description</div>
    <div class="info-box">
       <div class="stat-heading">ABV</div>
@@ -71,7 +71,7 @@
    <div class="info-box-last">
       <div class="stat-heading">Oz Left</div>
       <span class="stat">
-         <div id="ReloadThis">0</div>
+         <div id="Tap2Amount">0</div>
       </span>
    </div>
 </div>
@@ -90,7 +90,7 @@
    <div class="info-box-last">
       <div class="stat-heading">Oz Left</div>
       <span class="stat">
-         <div id="ReloadThis">0</div>
+         <div id="Tap3Amount">0</div>
       </span>
    </div>
 </div>
