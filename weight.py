@@ -9,6 +9,7 @@ analogvalB_keg1 = 415.30
 analogvalA_keg2 = 11
 analogvalB_keg2 = 387.60
 
+
 def maprange(s,analogvalA,analogvalB):
 	return loadA + ((s - analogvalA) * (loadB - loadA) / (analogvalB - analogvalA))
 	#return  analogvalA + ((s - loadA) * (analogvalB - analogvalA) / (loadB - loadA))
