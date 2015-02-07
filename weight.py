@@ -3,11 +3,13 @@ import serial
 import time
 
 loadA = 0.0
-analogvalA = 22.91
 loadB = 55.0
-analogvalB = 415.30
+analogvalA-keg1 = 22.91
+analogvalB-keg1 = 415.30
+analogvalA-keg2 = 11
+analogvalB-keg2 = 387.60
 
-def maprange(s):
+def maprange(s,analogvalA,analogvalB):
 	return loadA + ((s - analogvalA) * (loadB - loadA) / (analogvalB - analogvalA))
 	#return  analogvalA + ((s - loadA) * (analogvalB - analogvalA) / (loadB - loadA))
 
@@ -17,7 +19,10 @@ while 1 :
 	if not line.strip():
 		continue
 	print line
-	f = open('keg1.txt','w')
-	f.write(str(maprange(float(line))))
-	f.close()
-
+	weights = line.split(':')
+	with open('keg1.txt', 'w') as f:
+		f.write(str(maprange(float(weights[0], analogvalA-keg1, analogvalB-keg1))))
+	
+	with open('keg2.txt', 'w') as f:
+		f.write(str(maprange(float(weights[1], analogvalA-keg2, analogvalB-keg2))))
+	
