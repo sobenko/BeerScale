@@ -19,7 +19,7 @@ while 1 :
 	line = ser.readline()
 	if not line.strip():
 		continue
-	print line
+	#print line
 	weights = line.split(';')
 	with open('keg1.txt', 'w') as f:
 		f.write(str(maprange(float(weights[0]),analogvalA_keg1, analogvalB_keg1)))
