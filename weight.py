@@ -4,10 +4,10 @@ import time
 
 loadA = 0.0
 loadB = 55.0
-analogvalA-keg1 = 22.91
-analogvalB-keg1 = 415.30
-analogvalA-keg2 = 11
-analogvalB-keg2 = 387.60
+analogvalA_keg1 = 22.91
+analogvalB_keg1 = 415.30
+analogvalA_keg2 = 11
+analogvalB_keg2 = 387.60
 
 def maprange(s,analogvalA,analogvalB):
 	return loadA + ((s - analogvalA) * (loadB - loadA) / (analogvalB - analogvalA))
@@ -21,8 +21,8 @@ while 1 :
 	print line
 	weights = line.split(':')
 	with open('keg1.txt', 'w') as f:
-		f.write(str(maprange(float(weights[0], analogvalA-keg1, analogvalB-keg1))))
+		f.write(str(maprange(float(weights[0], analogvalA_keg1, analogvalB_keg1))))
 	
 	with open('keg2.txt', 'w') as f:
-		f.write(str(maprange(float(weights[1], analogvalA-keg2, analogvalB-keg2))))
+		f.write(str(maprange(float(weights[1], analogvalA_keg2, analogvalB_keg2))))
 	
