@@ -23,7 +23,6 @@ while 1 :
 	weights = line.split(';')
 	with open('keg1.txt', 'w') as f:
 		f.write(str(maprange(float(weights[0]),analogvalA_keg1, analogvalB_keg1)))
-	
-	with open('keg2.txt', 'w') as f:
+		f.write(";")
 		f.write(str(maprange(float(weights[1]),analogvalA_keg2, analogvalB_keg2)))
 	
