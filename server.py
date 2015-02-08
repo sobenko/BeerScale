@@ -39,7 +39,7 @@ def lbsToOz(lbs):
     return (tare / 8.5) * 128;
 
 def read_scales(ser):
-    while 1 :
+    while True:
         line = ser.readline()
         if not line.strip():
             continue
@@ -68,14 +68,18 @@ def amount_in_kegs():
     return ";".join([str(x) for x in kegs.values()])
 
 if __name__ == "__main__":
+    debug = True
+    # TODO: Params for debug = true/false
+    # TODO: serial port and baud as params
+    # TODO: Read default params from config file (or DB), and keg setup/values
 
-    #ser = serial.Serial('/dev/ttyACM0', 9600)
-
-    # Fake class which is like serial
-    class MockSerial:
-        def readline(self):
-            return "415.30;387.60"
-    ser = MockSerial()
+    if debug:
+        class MockSerial:
+            def readline(self):
+                return "415.30;387.60"
+        ser = MockSerial()
+    else:
+        ser = serial.Serial('/dev/ttyACM0', 9600)
 
     # Start the weight sensor in the background
     thread = threading.Thread(target=read_scales, args=(ser,))
@@ -83,4 +87,4 @@ if __name__ == "__main__":
     thread.start()
 
     # Start the webserver
-    app.run(debug=True)
+    app.run(debug=debug)
