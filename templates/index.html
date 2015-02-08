@@ -1,6 +1,6 @@
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="main.css">
+<link rel="stylesheet" type="text/css" href="static/main.css">
  <script type="text/javascript">
 
     function Ajax()
@@ -29,7 +29,7 @@
                     setTimeout(function(){$self();}, 1000);
                 }
             };
-            $http.open('GET', 'loadkeg1.php' + '?' + new Date().getTime(), true);
+            $http.open('GET', '/kegs' + '?' + new Date().getTime(), true);
             $http.send(null);
         }
 
@@ -54,7 +54,7 @@
    <div class="info-box-last">
       <div class="stat-heading">Oz Left</div>
       <span class="stat">
-         <div id="Tap2Amount">0</div>
+         <div id="Tap1Amount">0</div>
       </span>
    </div>
 </div>
