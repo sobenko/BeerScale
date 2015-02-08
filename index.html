@@ -23,7 +23,9 @@
             $http.onreadystatechange = function()
             {
                 if (/4|^complete$/.test($http.readyState)) {
-                    document.getElementById('Tap3Amount').innerHTML = $http.responseText;
+                    var weights = $http.responseText.split(";");
+                    document.getElementById('Tap1Amount').innerHTML = weights[0];
+                    document.getElementById('Tap3Amount').innerHTML = weights[1];
                     setTimeout(function(){$self();}, 1000);
                 }
             };
