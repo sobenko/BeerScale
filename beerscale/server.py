@@ -8,49 +8,35 @@ import threading
 import serial
 import time
 
+from keg import Keg
+from scale import Scale
+
 app = Flask(__name__)
 
-loadA = 0.0
-loadB = 55.0
 
-keg_data = {
-    0: {
-        'analogA': 22.91,
-        'analogB': 415.30
-    },
-    1: {
-        'analogA': 11,
-        'analogB': 387.60
-    }
-}
+# TODO: We could read these from a config file or database instead of having
+# them hardcoded.
+keg1 = Keg(final_gravity=1.010, empty_weight=17, name="Dan Good: Celebration Clone")
+keg2 = Keg(final_gravity=1.018, empty_weight=17, name="Six Point: Bengali IPA")
+kegs = [keg1, keg2]
 
-# This is map of keg weights by number -> weight, the tread writes to this
-kegs = {
-    0: 0,
-    1: 0
-}
+# TODO: These can probably be in a config file since they aren't all that dynamic
+# after initial installation
+scale1 = Scale(low_read=22.91, low_weight=0.0, high_read=415.30, high_weight=55.0)
+scale2 = Scale(low_read=11, low_weight=0.0, high_read=387.60, high_weight=55.0)
+scales = [scale1, scale2]
 
-def maprange(s, analogvalA, analogvalB):
-    return loadA + ((s - analogvalA) * (loadB - loadA) / (analogvalB - analogvalA))
-
-# 128 oz in a gallon
-# http://www.brewangels.com/Beerformation/Weight.html
-# Light Lager with a FG of 1.008: 8.345 x 1.008 = 8.422 lb/g (round to 8.4)
-# Barley Wine with a FG of 1.030: 8.345 x 1.030 = 8.595 lb/g (round to 8.6)
-def lbsToOz(lbs):
-    tare = lbs - 17;
-    return (tare / 8.5) * 128;
 
 def read_scales(ser):
     while True:
         line = ser.readline()
         if not line.strip():
             continue
-        weights = line.split(';')
+        reads = line.split(';')
 
-        for index, weight in enumerate(weights):
-            oz = lbsToOz(maprange(float(weight), keg_data[index]['analogA'], keg_data[index]['analogB']))
-            kegs[index] = int(oz)  # TODO: Some kinda rounding
+        for index, read in enumerate(reads):
+            weight = scales[index].weight(analog_read=float(read))
+            kegs[index].set_weight(weight)
         time.sleep(2)
 
 # Render all the static content 'as is'
@@ -63,12 +49,13 @@ def render_static(path):
 def index():
     return render_template('index.html')
 
-# Query for the current amount of liuqid in a keg by number
+# Query for the current amount of liquid in a keg by number
 # Examples:
 # HTTP GET /kegs  => 234.12;234.12
 @app.route("/kegs")
 def amount_in_kegs():
-    return ";".join([str(x) for x in kegs.values()])
+    # TODO: Probably should render a json object for when the payload has more interesting data
+    return ";".join([str(k.ounces) for k in kegs])
 
 @click.command()
 @click.option('--port', default=5000, help="Webserver port to use")
