@@ -1,5 +1,8 @@
+#!/usr/bin/env python
+
 from flask import Flask
 from flask import render_template, send_from_directory
+import click
 
 import threading
 import serial
@@ -67,19 +70,19 @@ def index():
 def amount_in_kegs():
     return ";".join([str(x) for x in kegs.values()])
 
-if __name__ == "__main__":
-    debug = True
-    # TODO: Params for debug = true/false
-    # TODO: serial port and baud as params
-    # TODO: Read default params from config file (or DB), and keg setup/values
-
+@click.command()
+@click.option('--port', default=5000, help="Webserver port to use")
+@click.option('--serial-port', default='/dev/ttyACM0', help="Serial port to read scale data from")
+@click.option('--baud', default=9600, help="Baud rate to use for serial port")
+@click.option('--debug', is_flag=True, help="Run in debug mode (with a fake serial interface)")
+def run(port, serial_port, baud, debug):
     if debug:
         class MockSerial:
             def readline(self):
                 return "415.30;387.60"
         ser = MockSerial()
     else:
-        ser = serial.Serial('/dev/ttyACM0', 9600)
+        ser = serial.Serial(serial_port, int(baud))
 
     # Start the weight sensor in the background
     thread = threading.Thread(target=read_scales, args=(ser,))
@@ -87,4 +90,7 @@ if __name__ == "__main__":
     thread.start()
 
     # Start the webserver
-    app.run(debug=debug)
+    app.run(debug=debug, port=port)
+
+if __name__ == "__main__":
+    run()
