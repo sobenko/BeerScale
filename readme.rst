@@ -1,6 +1,6 @@
-##############
-# Beer Scale #
-##############
+##########
+Beer Scale
+##########
 
 ************
 Introduction
@@ -38,8 +38,11 @@ Server Options
 --------------
 
 --debug: enable debug mode
+
 --port: the webserver port to use (default: 5000)
+
 --serial-port: the serial port to listen on (default: /dev/ttyACM0)
+
 --baud: the baud rate to use on the serial port (default: 9600)
 
 ********************
