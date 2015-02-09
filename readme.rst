@@ -48,7 +48,9 @@ Server Options
 Unit Testing
 ------------
 
-TODO
+Write unit tests in the `tests` directory, run tests via setup.py::
+
+  $ python setup.py test
 
 ********************
 Scale Setup + Wiring
