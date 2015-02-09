@@ -1,0 +1,5 @@
+#!/usr/bin/env python
+import beerscale.server
+
+if __name__ == "__main__":
+    beerscale.server.run()

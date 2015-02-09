@@ -1,2 +1,5 @@
 keg1.txt
 virtualenv
+*.pyc
+*.egg-info
+dist/

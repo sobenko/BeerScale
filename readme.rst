@@ -26,7 +26,7 @@ Create a virtualenv for the project and install the dependencies::
 
 Now run the webserver in debug mode::
 
-  python server.py --debug
+  python beerscale/server.py --debug
 
 Visit the website at: http://127.0.0.1:5000/
 
@@ -45,8 +45,29 @@ Server Options
 
 --baud: the baud rate to use on the serial port (default: 9600)
 
+Unit Testing
+------------
+
+TODO
+
 ********************
 Scale Setup + Wiring
 ********************
 
 TODO
+
+*******************
+Software Deployment
+*******************
+
+Building the server software is as easy as::
+
+  $ python setup.py sdist
+
+Installing the software (into a virtualenv)::
+
+  $ pip install -U BeerScale-<version>.tar.gz
+
+Running the server::
+
+  $ beerscale --debug --port 8000
