@@ -3,6 +3,9 @@ class Scale(object):
     weights along with their analog reads, we can use linear interpolation to
     determine the weight on the scale.
 
+    Scale: Accuteck Heavy Duty Postal Shipping Scale (A-ST85C)
+    http://www.amazon.com/gp/product/B005BTWMPQ/ref=oh_aui_detailpage_o02_s00?ie=UTF8&psc=1
+    
     Example usage:
 
     scale1 = Scale(22.13, 0, 413.12, 55.0)
