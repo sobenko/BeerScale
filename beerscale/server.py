@@ -16,8 +16,8 @@ app = Flask(__name__)
 
 # TODO: We could read these from a config file or database instead of having
 # them hardcoded.
-keg1 = Keg(final_gravity=1.010, empty_weight=17, name="Dan Good: Celebration Clone")
-keg2 = Keg(final_gravity=1.018, empty_weight=17, name="Six Point: Bengali IPA")
+keg1 = Keg(final_gravity=1.010, empty_weight=17)
+keg2 = Keg(final_gravity=1.018, empty_weight=17)
 kegs = [keg1, keg2]
 
 # TODO: These can probably be in a config file since they aren't all that dynamic
