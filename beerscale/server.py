@@ -23,7 +23,7 @@ kegs = [keg1, keg2]
 # TODO: These can probably be in a config file since they aren't all that dynamic
 # after initial installation
 scale1 = Scale(low_read=22.91, low_weight=0.0, high_read=415.30, high_weight=55.0)
-scale2 = Scale(low_read=11, low_weight=0.0, high_read=387.60, high_weight=55.0)
+scale2 = Scale(low_read=11.4, low_weight=0.0, high_read=388.50, high_weight=55.0)
 scales = [scale1, scale2]
 
 
